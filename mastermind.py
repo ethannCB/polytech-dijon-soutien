@@ -32,7 +32,6 @@ def test(val,code):    #val est la liste du code de la personne
     i=0
     pop=[]                        #retiens les indices qu'on va pop
     while i<len(code):
-        print(code[i],val[i])
         if code[i]==val[i]:
             correct+=1
             code.pop(i)
@@ -42,24 +41,32 @@ def test(val,code):    #val est la liste du code de la personne
     i=0                         #indice pour parcourir val
     j=0                         #indice pour parcourir code
     boo=True
-    while i<len(val): 
+    while i<len(val):
         boo=True
         j=0
         while boo and j<len(code):
             if val[i]==code[j]:
                 code.pop(j)
                 val.pop(i)
+                partiel+=1
+                i-=1                             #j'enleve 1 car j'en rajoute un obligatoirement apres et pas besoin de changer d'indice
                 boo=False
-            
+            j+=1
+        i+=1
+    return correct,partiel    #je laisse écrire la phrase dans le main
 
 
 
 
 
+def main():
+    langue=choix_color()
+    ini_langue=create_couleur(langue)
+    couleur(langue)
+    final=create_code(ini_langue)
 
-#def main():
 
 
 
 
-test(["A","B","C","D"],["A","B","D","C"])
+main()
