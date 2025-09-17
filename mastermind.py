@@ -20,8 +20,14 @@ def create_code(l_color):
         code.append(l_color[r.randint(0,len(l_color)-1)])   #ajoute a la liste code une couleur  au hazard 
     return code
 
-def main():
+def choix_color():
+    print("Voulez vous les couleurs en Francais ou en Anglais?")
+    choix=int(input("Indiquez 1 pour Francais et 2 pour Anglais: "))
+    if choix==1: return fr_color
+    else: return color
+#def main():
 
 
 
-print(create_couleur(color))
+
+print(choix_color())
