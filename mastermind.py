@@ -5,6 +5,12 @@ def couleur(liste):
     print("Voici les couleurs possible :")
     for color in liste:
         print("-",color)
-        #print("\n")
 
-couleur(fr_color)
+def create_couleur(l):
+    premiere_lettre=[]
+    for col in l:
+        premiere_lettre.append(col[0])
+        print(col[0])
+    return premiere_lettre 
+
+print(create_couleur(color))
