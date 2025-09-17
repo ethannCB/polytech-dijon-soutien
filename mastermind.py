@@ -26,23 +26,32 @@ def choix_color():
     if choix==1: return fr_color
     else: return color
 
-def test(val,code):
+def test(val,code):    #val est la liste du code de la personne
     correct=0
     partiel=0
     i=0
     pop=[]                        #retiens les indices qu'on va pop
     while i<len(code):
-        #print(i)*
         print(code[i],val[i])
         if code[i]==val[i]:
-            print("ok")
-            print(code,val)
             correct+=1
             code.pop(i)
             val.pop(i)
         else:
             i+=1
-    #for j in range(len(code)):
+    i=0                         #indice pour parcourir val
+    j=0                         #indice pour parcourir code
+    boo=True
+    while i<len(val): 
+        boo=True
+        j=0
+        while boo and j<len(code):
+            if val[i]==code[j]:
+                code.pop(j)
+                val.pop(i)
+                boo=False
+            
+
 
 
 
