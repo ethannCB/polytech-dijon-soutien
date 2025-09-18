@@ -4,23 +4,20 @@ fr_color=["Rouge","Vert","Bleu","Jaune","Mauve","Noir"]
 color=["Red","Green","Blue","Yellow","Purple","White"]
 new_color=[]
 
-
+""" pas fini
 #partie initialisation fichier:
-
-
-
-
 #partie extraction valeur de test:
 def lire_score():
     with open('.nbParties.txt','r')as fichier:
         return int(fichier.read())
 
 def lire_nbParties():
-    
+    with open('.score.txt','r')as fichier:
+        return int(fichier.read())
 
+def modif_score(ajout):
 
-
-
+"""
 
 #fonction qui liste les couleurs:
 def couleur(liste):                           
@@ -71,6 +68,7 @@ def test(val,code):               #val est la liste du code de la personne
         boo=True
         j=0
         while boo and j<len(code):# boucle qui elle depend de la taille de code et d'un booléen
+            print(code)
             if val[i]==code[j]:   #si valeur égale l'enlever
                 code.pop(j)
                 val.pop(i)
@@ -90,7 +88,7 @@ def main():
     langue=choix_color()                 
     ini_langue=create_couleur(langue)
     final=create_code(ini_langue)
-    print("final code=",final)
+    final_test=final
     fin=12
     essai=0
     gagne=True
@@ -100,21 +98,22 @@ def main():
     print("Entrez les initiales des couleurs, exemple : RGYP (respecter les lettres affichées)")
     while essai < fin and gagne:
         reponse=input("Entrez votre réponse: ").upper()
-
         reponse = list(reponse)
 
-        correct,partiel=test(reponse,final)
+        correct,partiel=test(reponse,final_test)
+
         print(f"Correct : {correct} | Partiel : {partiel}")
+        
         essai+=1
-        print(type(correct))
         
         if correct == 4:
             gagne = True
-            print(f"Bravo ! Vous avez trouvé le code en {essai} tentative(s) 🎉")
+            print(f"Bravo ! Vous avez trouvé le code en {essai} tentative(s) ")
             print(f"Score final : {fin - essai}")
         elif essai == fin:
-            print("Dommage, vous avez épuisé tous vos essais 😞")
+            print("Dommage, vous avez épuisé tous vos essais ")
             print("Le code était :", ''.join(final))
+        print(f"Il vous reste {fin - essai} tentatives.")
 
 
 
