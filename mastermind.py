@@ -1,7 +1,7 @@
 import random as r
 fr_color=["Rouge","Vert","Bleu","Jaune","Mauve","Noir"]
 color=["Red","Green","Blue","Yellow","Purple","White"]
-
+new_color=[]
 
 #fonction qui liste les couleurs:
 def couleur(liste):                           
@@ -16,53 +16,59 @@ def create_couleur(l):
         premiere_lettre.append(col[0])
     return premiere_lettre 
 
-def create_code(l_color):    #mettre liste avec seulement les premiere lettres
+# fonction qui crée le code initial
+def create_code(l_color):                     #mettre liste avec seulement les premieres lettres
     code=[]
-    for i in range(4):              # pour plus tard changer ici pour modifier le nombre de couleur du code final
+    for i in range(4):                        # pour plus tard changer ici pour modifier le nombre de couleur du code final
         code.append(l_color[r.randint(0,len(l_color)-1)])   #ajoute a la liste code une couleur  au hazard 
     return code
 
+#foncion qui demande la langue voulue pour les couleurs
 def choix_color():
     print("Voulez vous les couleurs en Francais ou en Anglais?")
     choix=int(input("Indiquez 1 pour Francais et 2 pour Anglais: "))
     if choix==1: return fr_color
-    else: return color
+    elif choix==2: return color
+    else: return new_color
 
-def test(val,code):    #val est la liste du code de la personne
+
+#fonction "test" qui cherche les valeurs corrects et partiellement correct
+def test(val,code):               #val est la liste du code de la personne
     correct=0
     partiel=0
     i=0
     pop=[]                        #retiens les indices qu'on va pop
     while i<len(code):
-        if code[i]==val[i]:
+        if code[i]==val[i]:       #compare valeur (pour valeur exacte)
             correct+=1
             code.pop(i)
             val.pop(i)
         else:
             i+=1
-    i=0                         #indice pour parcourir val
-    j=0                         #indice pour parcourir code
+    i=0                           #indice pour parcourir val
+    j=0                           #indice pour parcourir code
     boo=True
-    while i<len(val):
+    while i<len(val):             #boucle qui depend de la taille de val (car elle va varier)
         boo=True
         j=0
-        while boo and j<len(code):
-            if val[i]==code[j]:
+        while boo and j<len(code):# boucle qui elle depend de la taille de code et d'un booléen
+            if val[i]==code[j]:   #si valeur égale l'enlever
                 code.pop(j)
                 val.pop(i)
                 partiel+=1
-                i-=1                             #j'enleve 1 car j'en rajoute un obligatoirement apres et pas besoin de changer d'indice
+                i-=1             #j'enleve 1 car j'en rajoute un obligatoirement apres et pas besoin de changer d'indice
                 boo=False
             j+=1
         i+=1
-    return correct,partiel    #je laisse écrire la phrase dans le main
+    return correct,partiel         #je laisse écrire la phrase dans le main
 
 
 
 
 
 def main():
-    langue=choix_color()
+    #lancement des fonctions de bases
+    langue=choix_color()                 
     ini_langue=create_couleur(langue)
     final=create_code(ini_langue)
     print("final code=",final)
@@ -96,3 +102,23 @@ def main():
 
 
 main()
+
+
+"""
+
+Si vous souhaitez changer les couleurs soit ajouter ou supprimer une couleur dans la langue Francaise 
+aller ligne 2 et  rajouter votre langue en suivant l'exmple ci-dessous:
+
+exemple: vous souhaitez ajouter gris dans-----> fr_color=["Rouge","Vert","Bleu","Jaune","Mauve","Noir"] 
+rajoutez le en ecrivant-> ,"gris"      cela donnera: fr_color=["Rouge","Vert","Bleu","Jaune","Mauve","Noir","Gris] 
+faites de meme a la ligne 3 si vous souhaitez modifier les couleurs en anglais
+
+
+Cependant si vous voulez crée votre propre code couleur, il est mis a votre disposition ligne 4 new_color=[]
+qui est vide ainsi vous pouvez ajouter autant de couleur souhaitez dans la langue de votre choix suivant le
+même schema d'éxécution que ci dessus
+
+
+si vous souhaitez modifié la longueur du code final, il vous suffira de regarder la ligne 22:
+for i in range(4)     et modifier le 4 par la taille du code final que vous souhaitez
+
