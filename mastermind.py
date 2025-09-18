@@ -127,3 +127,4 @@ si vous souhaitez modifié la longueur du code final, il vous suffira:
 
 Pour ce qui est du nombre de tentative si vous souhaitez le modifier, il vous suffira d'aller a la ligne 75 
 et de modifier le chiffre 12 par le nombre de tentative souhaité
+"""
