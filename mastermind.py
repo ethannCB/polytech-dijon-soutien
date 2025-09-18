@@ -2,16 +2,18 @@ import random as r
 fr_color=["Rouge","Vert","Bleu","Jaune","Mauve","Noir"]
 color=["Red","Green","Blue","Yellow","Purple","White"]
 
-def couleur(liste):
-    print("Voici les couleurs possible :")
-    for color in liste:
+
+#fonction qui liste les couleurs:
+def couleur(liste):                           
+    print("Voici les couleurs possible :")    #
+    for color in liste:                       # prends toutes les valeurs de la liste de couleur connue
         print("-",color)
 
-def create_couleur(l):
-    premiere_lettre=[]
-    for col in l:
+#fonction qui renvoie une liste des initiales des couleurs :
+def create_couleur(l):                        
+    premiere_lettre=[]                     
+    for col in l:                             #prend chaque couleurs de la liste et la boucle prend la premiere lettre du mot
         premiere_lettre.append(col[0])
-        print(col[0])
     return premiere_lettre 
 
 def create_code(l_color):    #mettre liste avec seulement les premiere lettres
