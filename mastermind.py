@@ -71,13 +71,9 @@ def main():
     couleur(langue)
     print("Entrez les initiales des couleurs, exemple : RGYP (respecter les lettres affichées)")
     while essai < fin and gagne:
-        try:
-            reponse=input("Entrez votre réponse: ").upper
-            print("voorte reponse",reponse,type(reponse))
-        except:
-            print(reponse)
-            gagne=False
-        
+        reponse=input("Entrez votre réponse: ").upper()
+        correct,partiel=test(reponse,final)
+        print(f"Correct : {correct} | Partiel : {partiel}")
 
 
 
