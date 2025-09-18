@@ -63,6 +63,7 @@ def main():
     langue=choix_color()
     ini_langue=create_couleur(langue)
     final=create_code(ini_langue)
+    print("final code=",final)
     fin=12
     essai=0
     gagne=True
@@ -72,8 +73,21 @@ def main():
     print("Entrez les initiales des couleurs, exemple : RGYP (respecter les lettres affichées)")
     while essai < fin and gagne:
         reponse=input("Entrez votre réponse: ").upper()
+
+        reponse = list(reponse)
+
         correct,partiel=test(reponse,final)
         print(f"Correct : {correct} | Partiel : {partiel}")
+        essai+=1
+        print(type(correct))
+        
+        if correct == 4:
+            gagne = True
+            print(f"Bravo ! Vous avez trouvé le code en {essai} tentative(s) 🎉")
+            print(f"Score final : {fin - essai}")
+        elif essai == fin:
+            print("Dommage, vous avez épuisé tous vos essais 😞")
+            print("Le code était :", ''.join(final))
 
 
 
