@@ -62,8 +62,13 @@ def test(val,code):    #val est la liste du code de la personne
 def main():
     langue=choix_color()
     ini_langue=create_couleur(langue)
-    couleur(langue)
     final=create_code(ini_langue)
+    fin=12
+    essai=0
+    print("Bienvenue dans Mastermind !")
+    print("Devinez le code de 4 couleurs parmi celles proposées.") 
+    couleur(langue)
+    print("Entrez les initiales des couleurs, exemple : RGYP (respecter les lettres affichées)")
 
 
 
