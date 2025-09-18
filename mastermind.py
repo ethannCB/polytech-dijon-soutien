@@ -11,9 +11,12 @@ new_color=[]
 
 
 #partie extraction valeur de test:
-def lire_score(ajout):
-    with open()
+def lire_score():
+    with open('.nbParties.txt','r')as fichier:
+        return int(fichier.read())
 
+def lire_nbParties():
+    
 
 
 
