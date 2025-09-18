@@ -119,6 +119,11 @@ qui est vide ainsi vous pouvez ajouter autant de couleur souhaitez dans la langu
 même schema d'éxécution que ci dessus
 
 
-si vous souhaitez modifié la longueur du code final, il vous suffira de regarder la ligne 22:
-for i in range(4)     et modifier le 4 par la taille du code final que vous souhaitez
+si vous souhaitez modifié la longueur du code final, il vous suffira:
+-de regarder la ligne 22:
+                for i in range(4)     et modifier le 4 par la taille du code final que vous souhaitez
+-modifier le chiffre 4 de la ligne 92 par la taille choisie
 
+
+Pour ce qui est du nombre de tentative si vous souhaitez le modifier, il vous suffira d'aller a la ligne 75 
+et de modifier le chiffre 12 par le nombre de tentative souhaité
