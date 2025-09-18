@@ -65,10 +65,19 @@ def main():
     final=create_code(ini_langue)
     fin=12
     essai=0
+    gagne=True
     print("Bienvenue dans Mastermind !")
     print("Devinez le code de 4 couleurs parmi celles proposées.") 
     couleur(langue)
     print("Entrez les initiales des couleurs, exemple : RGYP (respecter les lettres affichées)")
+    while essai < fin and gagne:
+        try:
+            reponse=input("Entrez votre réponse: ").upper
+            print("voorte reponse",reponse,type(reponse))
+        except:
+            print(reponse)
+            gagne=False
+        
 
 
 
