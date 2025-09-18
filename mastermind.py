@@ -7,20 +7,12 @@ new_color=[]
 
 #partie initialisation fichier:
 
-nbParties=".nbParties"
-score=".score"
-def initialisation_fichier():
-    if not os.path.exists(score):
-        with open(score, 'w') as s:
-            s.write("0")
-    if not os.path.exists(nbParties):
-        with open(nbParties, 'w') as nb:
-            nb.write("0")
+
 
 
 #partie extraction valeur de test:
 def lire_score(ajout):
-
+    with open()
 
 
 
